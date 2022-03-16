@@ -1,25 +1,29 @@
 import { useThemeContext } from "./ThemeContext";
-import Sun from "../assets/Sun.svg";
-import Moon from "../assets/Moon.svg";
+import Sun from "../assets/sun.svg";
+import Moon from "../assets/moon.svg";
 
-const Toggle = () => {
+const ThemeToggle = () => {
   const { theme, setTheme } = useThemeContext();
 
   return (
-    <div className="transition duration-500 ease-in-out rounded-full p-2">
+    <div className=" w-40 transition duration-500 ease-in-out rounded-full p-2">
       {theme === "dark" ? (
-        <Sun
+        <img
+          src={Sun}
+          alt="Sun"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+          className="text-green-500 dark:text-green-400 text-2xl cursor-pointer"
         />
       ) : (
-        <Moon
+        <img
+          src={Moon}
+          alt="Moon"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+          className="text-green-500 dark:text-green-400 text-2xl cursor-pointer"
         />
       )}
     </div>
   );
 };
 
-export default Toggle;
+export default ThemeToggle;

@@ -19,7 +19,7 @@ const getInitialTheme = () => {
 
 const ThemeContext = React.createContext<React.ReactNode | null>(null);
 
-const ThemeProvider: React.FC<BgTheme> = ({ initialTheme, children }) => {
+const ThemeProvider = ({ initialTheme, children }: BgTheme) => {
   const [theme, setTheme] = useState(getInitialTheme);
 
   const rawSetTheme = (rawTheme: string) => {
@@ -42,7 +42,7 @@ const ThemeProvider: React.FC<BgTheme> = ({ initialTheme, children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <>{children}</>
+      {children}
     </ThemeContext.Provider>
   );
 };

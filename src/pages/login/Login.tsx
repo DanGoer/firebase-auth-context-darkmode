@@ -1,19 +1,20 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import ThemeToggle from "../../darkmode/ThemeToggle";
 import {
   logInWithEmailAndPassword,
   signInWithGoogle,
-} from "../../utility/firebase"
+} from "../../utility/firebase";
 
 function Login() {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const navigate = useNavigate()
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
 
   return (
-    <main className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72">
-        <h1 className="font-bold text-2xl">Login:</h1>
+    <main className="flex justify-center items-center h-screen">
+      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-black ">
+        <h1 className="font-bold text-2xl dark:text-gray-400 ">Login:</h1>
         <input
           type="email"
           className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
@@ -35,6 +36,9 @@ function Login() {
           >
             Login
           </button>
+          <div>
+            <ThemeToggle />
+          </div>
           <button
             className="px-7 py-1 border-2 bg-slate-100 text-lg border-slate-600 rounded-lg"
             onClick={() => navigate("/info")}
@@ -76,6 +80,6 @@ function Login() {
         </div>
       </div>
     </main>
-  )
+  );
 }
-export default Login
+export default Login;

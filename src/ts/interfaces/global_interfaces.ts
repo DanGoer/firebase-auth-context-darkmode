@@ -7,5 +7,5 @@ export type AuthContextType = { auth: any };
 
 export interface BgTheme {
   initialTheme: any;
-  children: React.ReactNode | { children: Element };
+  children: React.ReactNode;
 }
