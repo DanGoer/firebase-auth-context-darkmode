@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { BgTheme } from "../ts/interfaces/global_interfaces";
 
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
@@ -16,14 +17,14 @@ const getInitialTheme = () => {
   return "light"; // light theme as the default;
 };
 
-export const ThemeContext = React.createContext<React.ReactNode | null>(null);
+const ThemeContext = React.createContext<React.ReactNode | null>(null);
 
-export const ThemeProvider: React.FC = ({ initialTheme, children }) => {
+const ThemeProvider: React.FC<BgTheme> = ({ initialTheme, children }) => {
   const [theme, setTheme] = useState(getInitialTheme);
 
-  const rawSetTheme = (rawTheme) => {
+  const rawSetTheme = (rawTheme: string) => {
     const root = window.document.documentElement;
-    const isDark = rawTheme === "dark";
+    const isDark: boolean = rawTheme === "dark";
 
     root.classList.remove(isDark ? "light" : "dark");
     root.classList.add(rawTheme);
@@ -35,13 +36,19 @@ export const ThemeProvider: React.FC = ({ initialTheme, children }) => {
     rawSetTheme(initialTheme);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     rawSetTheme(theme);
   }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
+      <>{children}</>
     </ThemeContext.Provider>
   );
 };
+
+const useThemeContext: any = () => {
+  return useContext(ThemeContext);
+};
+
+export { ThemeContext, ThemeProvider, useThemeContext };
