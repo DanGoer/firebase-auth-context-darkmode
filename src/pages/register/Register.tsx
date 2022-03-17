@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import ThemeToggle from "../../darkmode/ThemeToggle";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,
@@ -20,7 +21,10 @@ function Register() {
   return (
     <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
-        <h1 className="font-bold text-2xl dark:text-gray-300">Register:</h1>
+        <div className="flex flex-row justify-between w-full items-center">
+          <h1 className="font-bold text-2xl dark:text-gray-300 ">Register:</h1>
+          <ThemeToggle />
+        </div>
         <input
           type="text"
           className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"

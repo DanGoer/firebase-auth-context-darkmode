@@ -19,8 +19,10 @@ const getInitialTheme = () => {
 
 const ThemeContext = React.createContext<React.ReactNode | null>(null);
 
-const ThemeProvider = ({ initialTheme, children }: BgTheme) => {
+const ThemeProvider = ({ children }: BgTheme) => {
   const [theme, setTheme] = useState(getInitialTheme);
+  const initTheme = getInitialTheme();
+  console.log(initTheme);
 
   const rawSetTheme = (rawTheme: string) => {
     const root = window.document.documentElement;
@@ -32,8 +34,8 @@ const ThemeProvider = ({ initialTheme, children }: BgTheme) => {
     localStorage.setItem("color-theme", rawTheme);
   };
 
-  if (initialTheme) {
-    rawSetTheme(initialTheme);
+  if (initTheme) {
+    rawSetTheme(initTheme);
   }
 
   useEffect(() => {

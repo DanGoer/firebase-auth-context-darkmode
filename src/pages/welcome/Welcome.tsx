@@ -3,6 +3,7 @@ import { db, logout } from "../../utility/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { useAuthContext } from "../../utility/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
+import ThemeToggle from "../../darkmode/ThemeToggle";
 
 function Welcome() {
   const [name, setName] = useState<string>("");
@@ -35,7 +36,12 @@ function Welcome() {
   return (
     <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
-        <h1 className="font-bold text-2xl dark:text-gray-300">Welcome-Page:</h1>
+        <div className="flex flex-row justify-between w-full items-center">
+          <h1 className="font-bold text-2xl dark:text-gray-300 ">
+            Welcome-Page:
+          </h1>
+          <ThemeToggle />
+        </div>
         <p className="flex flex-col dark:text-gray-300">
           Logged in as:
           <span className="mx-2 text-rose-900 dark:text-gray-300">

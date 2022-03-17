@@ -6,11 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./utility/AuthContextProvider";
 import { ThemeProvider } from "./darkmode/ThemeContext";
 import Background from "./darkmode/BackGround";
-import ThemeToggle from "./darkmode/ThemeToggle";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider initialTheme>
+    <ThemeProvider>
       <Background>
         <AuthProvider>
           <BrowserRouter>

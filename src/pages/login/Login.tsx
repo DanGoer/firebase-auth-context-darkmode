@@ -14,7 +14,11 @@ function Login() {
   return (
     <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
-        <h1 className="font-bold text-2xl dark:text-gray-300 ">Login:</h1>
+        <div className="flex flex-row justify-between w-full items-center">
+          <h1 className="font-bold text-2xl dark:text-gray-300 ">Login:</h1>
+
+          <ThemeToggle />
+        </div>
         <input
           type="email"
           className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
@@ -36,9 +40,6 @@ function Login() {
           >
             Login
           </button>
-          <div>
-            <ThemeToggle />
-          </div>
           <button
             className="px-7 py-1 border-2 bg-slate-100 text-lg border-slate-600 rounded-lg"
             onClick={() => navigate("/info")}

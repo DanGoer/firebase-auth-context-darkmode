@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { sendPasswordReset } from "../../utility/firebase";
 import { useAuthContext } from "../../utility/AuthContextProvider";
+import ThemeToggle from "../../darkmode/ThemeToggle";
 
 function Reset() {
   const [email, setEmail] = useState<string>("");
@@ -9,10 +10,14 @@ function Reset() {
 
   return (
     <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
-      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
-        <h1 className="font-bold text-2xl dark:text-gray-300">
-          Password-Reset:
-        </h1>
+      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-8 text-lg w-72 dark:bg-slate-700">
+        <div className="flex flex-row justify-between w-full items-center">
+          <h1 className="font-bold text-2xl dark:text-gray-300 ">
+            Password-Reset:
+          </h1>
+
+          <ThemeToggle />
+        </div>
         {userData && <div>ist da</div>}
         <div className="flex flex-col space-y-10 items-center">
           <p className="dark:text-gray-300">
