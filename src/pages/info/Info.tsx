@@ -1,12 +1,15 @@
+// Placeholder for conditionely displaying data
+
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "../../darkmode/ThemeToggle";
 import { useAuthContext } from "../../utility/AuthContextProvider";
+
 function Info() {
   const { userData } = useAuthContext();
   const navigate = useNavigate();
 
   return (
-    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
+    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900 transition-all">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
         <div className="flex flex-row justify-between w-full items-center">
           <h1 className="font-bold text-2xl dark:text-gray-300 ">Info:</h1>

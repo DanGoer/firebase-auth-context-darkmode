@@ -1,5 +1,9 @@
+// Context for darkmode
+
 import React, { useContext, useEffect, useState } from "react";
 import { BgTheme } from "../ts/interfaces/global_interfaces";
+
+// Function for checking prefered mode
 
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
@@ -17,7 +21,11 @@ const getInitialTheme = () => {
   return "light"; // light theme as the default;
 };
 
+// Creates Context
+
 const ThemeContext = React.createContext<React.ReactNode | null>(null);
+
+// Context Provider
 
 const ThemeProvider = ({ children }: BgTheme) => {
   const [theme, setTheme] = useState(getInitialTheme);
@@ -48,6 +56,8 @@ const ThemeProvider = ({ children }: BgTheme) => {
     </ThemeContext.Provider>
   );
 };
+
+// Custom hook for consuming Context
 
 const useThemeContext: any = () => {
   return useContext(ThemeContext);

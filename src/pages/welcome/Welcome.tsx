@@ -1,3 +1,5 @@
+// Placeholder Welcome page after the authentification
+
 import { useEffect, useState } from "react";
 import { db, logout } from "../../utility/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -34,7 +36,7 @@ function Welcome() {
   }, []);
 
   return (
-    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
+    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900 transition-all">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
         <div className="flex flex-row justify-between w-full items-center">
           <h1 className="font-bold text-2xl dark:text-gray-300 ">

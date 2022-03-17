@@ -1,4 +1,6 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+// Structere and routes of the APP
+
+import { Routes, Route } from "react-router-dom";
 import Welcome from "./pages/welcome/Welcome";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
@@ -11,7 +13,6 @@ import Info from "./pages/info/Info";
 
 function App() {
   const auth = getAuth();
-  const navigate = useNavigate();
   const { userData, setUserData } = useAuthContext();
 
   useEffect(() => {

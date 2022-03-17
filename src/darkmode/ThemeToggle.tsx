@@ -1,10 +1,12 @@
+// Toggle Button for darkmode
+
 import { useThemeContext } from "./ThemeContext";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useThemeContext();
 
   return (
-    <div className=" w-12 transition duration-500 ease-in-out rounded-full p-2">
+    <div className="w-12 transition duration-500 ease-in-out rounded-full p-2">
       {theme === "dark" ? (
         <>
           <svg
@@ -19,7 +21,7 @@ const ThemeToggle = () => {
       ) : (
         <svg
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className=" text-2xl cursor-pointer"
+          className="text-2xl cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >

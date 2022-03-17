@@ -1,3 +1,5 @@
+// Reset page for the authentification
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { sendPasswordReset } from "../../utility/firebase";
@@ -9,13 +11,12 @@ function Reset() {
   const { userData } = useAuthContext();
 
   return (
-    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
+    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900 transition-all">
       <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-8 text-lg w-72 dark:bg-slate-700">
         <div className="flex flex-row justify-between w-full items-center">
           <h1 className="font-bold text-2xl dark:text-gray-300 ">
             Password-Reset:
           </h1>
-
           <ThemeToggle />
         </div>
         {userData && <div>ist da</div>}
