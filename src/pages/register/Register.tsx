@@ -1,36 +1,36 @@
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   registerWithEmailAndPassword,
   signInWithGoogle,
-} from "../../utility/firebase"
+} from "../../utility/firebase";
 
 function Register() {
-  const [email, setEmail] = useState<string>("")
-  const [password, setPassword] = useState<string>("")
-  const [name, setName] = useState<string>("")
-  const navigate = useNavigate()
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const navigate = useNavigate();
 
   const register = () => {
-    if (!name) alert("Please enter name")
-    registerWithEmailAndPassword(name, email, password)
-    navigate("/")
-  }
+    if (!name) alert("Please enter name");
+    registerWithEmailAndPassword(name, email, password);
+    navigate("/");
+  };
 
   return (
-    <main className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72">
-        <h1 className="font-bold text-2xl">Register:</h1>
+    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
+      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
+        <h1 className="font-bold text-2xl dark:text-gray-300">Register:</h1>
         <input
           type="text"
-          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
+          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Full Name"
         />
         <input
           type="text"
-          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
+          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
@@ -38,7 +38,7 @@ function Register() {
         <div className="flex flex-col space-y-10 items-center">
           <input
             type="password"
-            className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
+            className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -50,7 +50,7 @@ function Register() {
             Register
           </button>{" "}
         </div>
-        <p className="flex flex-row">
+        <p className="flex flex-row dark:text-gray-300">
           Register with
           <span
             className="ml-1 underline cursor-pointer hover:text-amber-500"
@@ -60,7 +60,7 @@ function Register() {
           </span>
           .
         </p>
-        <div>
+        <div className="dark:text-gray-300">
           Already have an account?{" "}
           <Link
             className="underline cursor-pointer hover:text-amber-500"
@@ -72,6 +72,6 @@ function Register() {
         </div>
       </div>
     </main>
-  )
+  );
 }
-export default Register
+export default Register;

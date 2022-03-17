@@ -12,12 +12,12 @@ function Login() {
   const navigate = useNavigate();
 
   return (
-    <main className="flex justify-center items-center h-screen">
-      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-black ">
-        <h1 className="font-bold text-2xl dark:text-gray-400 ">Login:</h1>
+    <main className="flex justify-center items-center h-screen bg-gray-100 dark:bg-slate-900">
+      <div className="p-4 bg-white rounded-xl shadow-lg flex flex-col items-start space-y-10 text-lg w-72 dark:bg-slate-700">
+        <h1 className="font-bold text-2xl dark:text-gray-300 ">Login:</h1>
         <input
           type="email"
-          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
+          className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="E-mail Address"
@@ -25,7 +25,7 @@ function Login() {
         <div className="flex flex-col space-y-10 items-center">
           <input
             type="password"
-            className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64"
+            className="px-1 py-1 border-2 shadow-lg border-slate-400 w-64 dark:placeholder-gray-700"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -46,7 +46,7 @@ function Login() {
             Info
           </button>
         </div>
-        <p className="flex flex-row">
+        <p className="flex flex-row dark:text-gray-300">
           Login with
           <span
             className="ml-1 underline cursor-pointer hover:text-amber-500"
@@ -56,7 +56,7 @@ function Login() {
           </span>
           .
         </p>
-        <p className="flex flex-row">
+        <p className="flex flex-row dark:text-gray-300">
           Forgot Password? Click
           <span>
             <Link
@@ -68,7 +68,7 @@ function Login() {
             .
           </span>
         </p>
-        <div>
+        <div className="dark:text-gray-300">
           Don't have an account?{" "}
           <Link
             className="underline cursor-pointer hover:text-amber-500"
